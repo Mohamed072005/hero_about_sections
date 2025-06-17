@@ -1,0 +1,410 @@
+/* style.css */
+
+/* --- Custom CSS Variables (from your SCSS variables) --- */
+:root {
+    /** ======= Body bg color ======= **/
+    --bodyBgColor: #111;
+    /** ======= Primary, secondary, tertiary ======= **/
+    --PrimaryColor: #ff363d;
+    --SecondaryColor: #000;
+    --TertiaryColor: #30D4D3;
+    /** ======= colors  ======= **/
+    --whiteColor: #FFFFFF;
+    --blackColor: #111;
+    --textColor: #333; /* Note: This is dark, will be used sparingly or for very specific elements on a light background */
+    --hrefColor: #ff363d;
+    --colorError: #FFFFFF;
+    --colorRed: red;
+    --colorGreen: #6F9B00;
+
+    /** ======= CTA ======= **/
+    --ctaTextColor: #FFFFFF;
+    --ctaBgColor: #ff363d;
+    --ctaHoverColor: #FFFFFF;
+    --ctaTextHoverColor: #111;
+    --cta2TextColor: #FFFFFF;
+    --cta2BgColor: #f3f3f3;
+    --cta2HoverColor: #ff363d;
+
+    /** ======= NAV BAR ======= **/
+    --BgColorNavbarFixed: #000;
+    --ColorNavLinkFixed: #FFFFFF;
+    --BgColorNavbar: #000;
+    --ColorNavLink: #FFFFFF;
+    --HoverColorNavLink: #252526;
+    --HoverColorBorderBottomNavLink: #ff363d;
+
+    /** ======= FOOTER ======= **/
+    --footerBgColor: #151515;
+    --hrBorderColor: #252526;
+    --footerTitleColor: #d7d7d7;
+    --footerTextColor: #d7d7d7;
+
+    /** ======= Tables ======= **/
+    --TableBgColor: #404040;
+    --TableHoverBgColor: #515151;
+    --TableTextColor: #ffffff;
+    --delivered: #00c400;
+    --canceled: #ff363d;
+    --pending: #ff8a66;
+    --accepted: #ffffff;
+    --statusBgColor: #000;
+
+    /** ======= banner / sliders ======= **/
+    --bannerBgColor: #111;
+    --bannerH1Color: #ffffff;
+    --bannerH2Color: #ffffff;
+    --bannerTextColor: #ffffff;
+
+    /** =======  Primary Sections  ======= **/
+    --SectionPrimaryBgColor: #111;
+    --SectionPrimaryH1Color: #FFFFFF;
+    --SectionPrimaryH2Color: #fff;
+    --SectionPrimaryH3Color: #fff;
+    --SectionPrimaryH4Color: #fff;
+    --SectionPrimaryH5Color: #fff;
+    --SectionPrimaryH6Color: #fff;
+    --SectionPrimarySubTitleColor: #ff363d;
+    --SectionPrimaryTextColor: #fff;
+
+    /** ======= Secondary Sections  ======= **/
+    --SectionSecondaryBgColor: #111;
+    --SectionSecondaryH1Color: #FFFFFF;
+    --SectionSecondaryH2Color: #fff;
+    --SectionSecondaryH3Color: #FFFFFF;
+    --SectionSecondaryH4Color: #fff;
+    --SectionSecondaryH5Color: #fff;
+    --SectionSecondaryH6Color: #fff;
+    --SectionSecondarySubTitleColor: #ff363d;
+    --SectionSecondaryTextColor: #FFFFFF;
+
+    /** ======= Card categories ======= **/
+    --CategoryPrimaryBgColor: #ff363d;
+    --CategorySecondaryBgColor: #111;
+    --CategoryTitleColor: #ffffff;
+    --CategoryDesColor: #111; /* Note: Dark color on dark background, might need adjustment */
+    --CategoryPriceColor: #ff363d;
+
+    /** ======= Card Products ======= **/
+    --ProductPrimaryBgColor: #2F2F2F;
+    --ProductSecondaryBgColor: #2d2d2d;
+    --productTitleColor: #fff;
+    --productDesColor: #fff;
+    --productPriceColor: #fff;
+
+    /** ======= Icons color ======= **/
+    --socialMediaIconsColor: #FFFFFF;
+    --footerIconsColor: #FFFFFF;
+    --servicesIconsColor: #FFFFFF;
+    --crudIconsColor: #FFFFFF;
+    --navbarDesktopIconsColor: #111; /* Note: Dark on dark, might need adjustment if navbar is dark */
+    --navbarMobileIconsColor: #FFFFFF;
+    --closeIconsColor: #FFFFFF;
+    --readMoreIconsColor: #111; /* Note: Dark on dark, might need adjustment */
+
+    /** ======= select option ======= **/
+    --textSelectOption: #000;
+
+    /*** ======= Section contact ======= **/
+    --SectionContactbgColor: #111;
+    --ContactItemTitleColor: #fff;
+    --ContactItemTextColor: #262626; /* Note: Dark on dark, might need adjustment */
+    --ContactBorderItemIconColor: #30D4D3;
+    --ContactItemIconColor: #ff363d;
+
+    /*** ======= Section values or services ======= **/
+    --SectionServicesbgColor: #ff363d;
+    --ServicesbgColor: #ff363d;
+    --ServicesHoverbgColor: #111;
+    --ServicesH3Color: #ffffff;
+    --ServicesHoverH3Color: #ffffff;
+    --ServicesTextColor: #333; /* Note: Dark on dark, might need adjustment */
+    --ServicesHoverTextColor: #ffffff;
+    --ServicesIconColor: #ffffff;
+    --ServicesHoverIconColor: #ff363d;
+}
+
+/* --- General Body and Bootstrap Overrides --- */
+body {
+    min-height: 100vh;
+    background-color: var(--bodyBgColor);
+    font-family: sans-serif; /* Fallback font */
+    color: var(--whiteColor); /* Default text color for the body */
+}
+
+/* --- Re-creating Tailwind-like utility classes with specific values --- */
+.min-h-screen { min-height: 100vh; }
+.vh-100 { height: 100vh; } /* Bootstrap vh-100 */
+
+.object-cover { object-fit: cover; }
+.z-0 { z-index: 0; }
+.z-1 { z-index: 1; } /* Renamed from z-10 for simplicity */
+
+/* Text colors */
+.text-primary-color { color: var(--PrimaryColor); }
+.text-white { color: var(--whiteColor); }
+.text-black { color: var(--blackColor); }
+.text-footer-text-color { color: var(--footerTextColor); } /* Used for previously gray text */
+
+/* Background colors */
+.bg-body-color { background-color: var(--bodyBgColor); } /* Main background */
+.bg-product-primary { background-color: var(--ProductPrimaryBgColor); } /* Used for cards */
+.bg-black-color { background-color: var(--blackColor); } /* Used for icons circle */
+
+
+/* Borders */
+.border-white-50 { border-color: rgba(255, 255, 255, 0.5); }
+.border-hr-color { border-color: var(--hrBorderColor); } /* Used for previously gray borders */
+.border-gray-100 { border-color: var(--gray-100); } /* Retained if needed for very light elements */
+
+/* Shadows */
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+
+/* Rounded corners */
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-full, .rounded-circle { border-radius: 9999px !important; } /* Bootstrap's rounded-circle is 50% */
+
+/* Spacing & Layout utilities (some are Bootstrap, some custom) */
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+.pt-4 { padding-top: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-5 { margin-top: 3rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 1rem; }
+.gap-4 { gap: 1.5rem; }
+.gap-5 { gap: 3rem; }
+
+/* Typography utilities */
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-3xl { font-size: 1.875rem; }
+.fs-2 { font-size: 2rem; }
+.fs-4 { font-size: 1.5rem; }
+.fs-5 { font-size: 1.25rem; }
+
+.font-light, .fw-light { font-weight: 300; }
+.font-medium, .fw-medium { font-weight: 500; }
+.fw-bold { font-weight: 700; }
+.fst-italic { font-style: italic; }
+
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.uppercase { text-transform: uppercase; }
+
+.leading-relaxed { line-height: 1.625; }
+.lh-base { line-height: 1.5; }
+.lh-sm { line-height: 1.25; }
+
+.opacity-90 { opacity: 0.9; }
+
+/* Dimensions */
+.w-24 { width: 6rem; }
+.h-px { height: 1px; }
+.w-12 { width: 3rem; }
+.h-12 { height: 3rem; }
+.w-6 { width: 1.5rem; }
+.h-6 { height: 1.5rem; }
+.w-5 { width: 1.25rem; }
+.h-5 { height: 1.25rem; }
+.w-4 { width: 1rem; }
+.h-4 { height: 1rem; }
+
+/* --- Specific Component Styling --- */
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.background-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    max-width: 960px;
+}
+
+.hero-divider {
+    width: 6rem;
+    height: 1px;
+    background-color: var(--PrimaryColor); /* Using PrimaryColor for the divider */
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--ctaBgColor);
+    border-color: var(--ctaBgColor);
+    color: var(--ctaTextColor);
+    transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover {
+    background-color: var(--ctaHoverColor);
+    border-color: var(--ctaHoverColor);
+    color: var(--blackColor) !important;
+    transform: scale(1.05); 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline-light {
+    border-color: var(--whiteColor);
+    color: var(--whiteColor);
+    transition: all 0.3s ease-in-out;
+}
+.btn-outline-light:hover {
+    background-color: var(--whiteColor);
+    color: var(--blackColor) !important;
+    transform: scale(1.05);
+}
+
+/* Generic hover effects */
+.hover-scale-105:hover { transform: scale(1.05); }
+.hover-shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.hover-shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+
+/* About Section (text color set on the section element in HTML) */
+.space-y-3 > *:not(:last-child) { margin-bottom: 0.75rem; }
+.space-y-4 > *:not(:last-child) { margin-bottom: 1rem; }
+.space-y-6 > *:not(:last-child) { margin-bottom: 1.5rem; }
+.space-y-8 > *:not(:last-child) { margin-bottom: 2rem; }
+
+.about-section {
+    background-color: var(--whiteColor); /* Changed from gradient to solid dark */
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+/* Overlay for image on hover */
+.image-wrapper .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.image-wrapper:hover .image-overlay {
+    opacity: 1;
+}
+
+/* Floating Card */
+.floating-card {
+    background-color: var(--ProductPrimaryBgColor); /* Changed from white */
+    border-color: var(--hrBorderColor); /* Changed from gray-100 */
+    left: 0;
+    transform: translate(-25%, 50%);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+@media (min-width: 992px) {
+  .floating-card {
+    bottom: -1.5rem;
+    left: -1.5rem;
+    transform: none;
+  }
+}
+
+/* Icon Circles for info cards */
+.icon-circle {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Lucide Icon fill */
+.fill-current {
+    fill: currentColor;
+}
+
+/* --- Animations --- */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-out;
+}
+
+.animate-fade-in-delayed {
+    animation: fade-in-up 1s ease-out 0.3s both;
+}
+
+.animate-fade-in-delayed-2 {
+    animation: fade-in-up 1s ease-out 0.6s both;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Media Queries for Responsive Typography */
+@media (min-width: 768px) {
+    .display-md-1 { font-size: 5rem; }
+    .fs-md-4 { font-size: 1.5rem; }
+    .display-4 { font-size: 3rem; }
+}
+
+/* Image Fluid for Responsive Images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
